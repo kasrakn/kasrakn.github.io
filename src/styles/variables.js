@@ -2,6 +2,12 @@ import { css } from 'styled-components';
 
 const variables = css`
   :root {
+    --body-light: #fff;
+    --p-color: #46505a;
+    --mui-blue: #007fff;
+    --mui-dark-blue: #0059b2;
+    --mui-black: #0a1929;
+
     --dark-navy: #020c1b;
     --navy: #0a192f;
     --light-navy: #112240;

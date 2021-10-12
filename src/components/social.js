@@ -12,6 +12,7 @@ const StyledSocialList = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
+  color: var(--slate);
 
   &:after {
     content: '';
@@ -19,7 +20,7 @@ const StyledSocialList = styled.ul`
     width: 1px;
     height: 90px;
     margin: 0 auto;
-    background-color: var(--light-slate);
+    background-color: var(--slate);
   }
 
   li {
@@ -33,6 +34,7 @@ const StyledSocialList = styled.ul`
       &:hover,
       &:focus {
         transform: translateY(-3px);
+        color: var(--mui-blue);
       }
 
       svg {

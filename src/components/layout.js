@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
-import { Head, Loader, Nav, Social, Email, Footer } from '@components';
+import { Head, Loader, Social, Email, Footer } from '@components';
+// import {  Nav } from '@components'
 import { GlobalStyle, theme } from '@styles';
 
 // https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
@@ -68,7 +69,7 @@ const Layout = ({ children, location }) => {
             <Loader finishLoading={() => setIsLoading(false)} />
           ) : (
             <StyledContent>
-              <Nav isHome={isHome} />
+              {/* <Nav isHome={isHome} /> */}
               <Social isHome={isHome} />
               <Email isHome={isHome} />
 
