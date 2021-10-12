@@ -5,8 +5,13 @@ const variables = css`
     --body-light: #fff;
     --p-color: #46505a;
     --mui-blue: #007fff;
+    --mui-blue-tint: rgba(0, 127, 255, 0.1);
     --mui-dark-blue: #0059b2;
     --mui-black: #0a1929;
+    --mui-blue-4: #42a5f5;
+    --mui-blue-50: #e3f2fd;
+    --mui-grey-100: #f5f5f5;
+    --mui-grey-200: #eeeeee;
 
     --dark-navy: #020c1b;
     --navy: #0a192f;

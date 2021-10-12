@@ -20,12 +20,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: var(--lightest-navy);
-    color: var(--lightest-slate);
+    background-color: var(--lightest-slate);
+    color: var(--dark-slate);
   }
 
   :focus {
-    outline: 2px dashed var(--green);
+    ${'' /* outline: 2px dashed var(--mui-blue-tint); */}
     outline-offset: 3px;
   }
 
@@ -54,7 +54,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     background-color: var(--body-light);
-    color: var(--slate);
+    color: var(--dark-slate);
     font-family: var(--font-sans);
     font-size: var(--fz-xl);
     line-height: 1.3;
@@ -249,7 +249,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:hover,
     &:focus {
-      color: var(--green);
+      color: var(--mui-blue);
     }
 
     &.inline-link {
@@ -313,7 +313,7 @@ const GlobalStyle = createGlobalStyle`
           content: '▹';
           position: absolute;
           left: 0;
-          color: var(--green);
+          color: var(--mui-blue);
         }
       }
     }
@@ -360,8 +360,8 @@ const GlobalStyle = createGlobalStyle`
 
     &:focus,
     &:active {
-      background-color: var(--green);
-      color: var(--navy);
+      background-color: var(--mui-dark-blue);
+      color: var(--body-light);
       top: 0;
       left: 0;
       width: auto;
