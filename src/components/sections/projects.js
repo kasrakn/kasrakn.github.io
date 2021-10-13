@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
-import { Icon } from '@components/icons';
+// import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledProjectsSection = styled.section`
@@ -27,7 +27,7 @@ const StyledProjectsSection = styled.section`
   .projects-grid {
     ${({ theme }) => theme.mixins.resetList};
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     grid-gap: 15px;
     position: relative;
     margin-top: 50px;
@@ -54,6 +54,10 @@ const StyledProject = styled.li`
       .project-inner {
         transform: translateY(-7px);
       }
+
+      .project-title {
+        color: var(--mui-blue);
+      }
     }
   }
 
@@ -71,16 +75,16 @@ const StyledProject = styled.li`
     height: 100%;
     padding: 2rem 1.75rem;
     border-radius: var(--border-radius);
-    background-color: var(--light-navy);
+    background-color: #fafafa;
     transition: var(--transition);
   }
 
   .project-top {
     ${({ theme }) => theme.mixins.flexBetween};
-    margin-bottom: 35px;
+    margin-bottom: 15px;
 
     .folder {
-      color: var(--green);
+      color: var(--mui-dark-blue);
       svg {
         width: 40px;
         height: 40px;
@@ -115,7 +119,7 @@ const StyledProject = styled.li`
 
   .project-title {
     margin: 0 0 10px;
-    color: var(--lightest-slate);
+    color: var(--slate);
     font-size: var(--fz-xxl);
 
     a {
@@ -135,7 +139,7 @@ const StyledProject = styled.li`
   }
 
   .project-description {
-    color: var(--light-slate);
+    color: var(--dark-slate);
     font-size: 17px;
 
     a {
@@ -151,6 +155,7 @@ const StyledProject = styled.li`
     padding: 0;
     margin: 20px 0 0 0;
     list-style: none;
+    color: var(--slate);
 
     li {
       font-family: var(--font-mono);
@@ -169,7 +174,7 @@ const Projects = () => {
     query {
       projects: allMarkdownRemark(
         filter: {
-          fileAbsolutePath: { regex: "/projects/" }
+          fileAbsolutePath: { regex: "/content/kasra-projects/" }
           frontmatter: { showInProjects: { ne: false } }
         }
         sort: { fields: [frontmatter___date], order: DESC }
@@ -212,13 +217,13 @@ const Projects = () => {
 
   const projectInner = node => {
     const { frontmatter, html } = node;
-    const { github, external, title, tech } = frontmatter;
+    const { external, title, tech } = frontmatter;
 
     return (
       <div className="project-inner">
         <header>
           <div className="project-top">
-            <div className="folder">
+            {/* <div className="folder">
               <Icon name="Folder" />
             </div>
             <div className="project-links">
@@ -237,13 +242,17 @@ const Projects = () => {
                   <Icon name="External" />
                 </a>
               )}
-            </div>
+            </div> */}
           </div>
 
           <h3 className="project-title">
-            <a href={external} target="_blank" rel="noreferrer">
-              {title}
-            </a>
+            {external ? (
+              <a href={external} target="_blank" rel="noreferrer">
+                {title}
+              </a>
+            ) : (
+              title
+            )}
           </h3>
 
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
@@ -264,7 +273,7 @@ const Projects = () => {
 
   return (
     <StyledProjectsSection>
-      <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
+      <h2 ref={revealTitle}>Selected Projects</h2>
 
       <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
         view the archive

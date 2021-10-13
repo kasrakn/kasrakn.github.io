@@ -7,7 +7,7 @@ import { KEY_CODES } from '@utils';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
-const StyledJobsSection = styled.section`
+const StyledPubsSection = styled.section`
   max-width: 700px;
 
   .inner {
@@ -19,7 +19,7 @@ const StyledJobsSection = styled.section`
 
     // Prevent container from jumping
     @media (min-width: 700px) {
-      min-height: 340px;
+      min-height: 240px;
     }
   }
 `;
@@ -165,11 +165,11 @@ const StyledTabPanel = styled.div`
   }
 `;
 
-const Jobs = () => {
+const Publications = () => {
   const data = useStaticQuery(graphql`
     query {
       jobs: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/jobs/" } }
+        filter: { fileAbsolutePath: { regex: "/content/publications/" } }
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
         edges {
@@ -244,8 +244,8 @@ const Jobs = () => {
   };
 
   return (
-    <StyledJobsSection id="jobs" ref={revealContainer}>
-      <h2 className="numbered-heading">Work Experience</h2>
+    <StyledPubsSection id="jobs" ref={revealContainer}>
+      <h2 className="numbered-heading">Publications</h2>
 
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
@@ -274,7 +274,7 @@ const Jobs = () => {
           {jobsData &&
             jobsData.map(({ node }, i) => {
               const { frontmatter, html } = node;
-              const { title, url, company, range } = frontmatter;
+              const { title } = frontmatter;
 
               return (
                 <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
@@ -287,16 +287,7 @@ const Jobs = () => {
                     hidden={activeTabId !== i}>
                     <h3>
                       <span>{title}</span>
-                      <span className="company">
-                        &nbsp;@&nbsp;
-                        <a href={url} className="inline-link" style={{ color: 'var(--slate)' }}>
-                          {company}
-                        </a>
-                      </span>
                     </h3>
-
-                    <p className="range">{range}</p>
-
                     <div dangerouslySetInnerHTML={{ __html: html }} />
                   </StyledTabPanel>
                 </CSSTransition>
@@ -304,8 +295,8 @@ const Jobs = () => {
             })}
         </StyledTabPanels>
       </div>
-    </StyledJobsSection>
+    </StyledPubsSection>
   );
 };
 
-export default Jobs;
+export default Publications;

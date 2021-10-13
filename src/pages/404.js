@@ -13,7 +13,13 @@ const StyledMainContainer = styled.main`
   flex-direction: column;
 `;
 const StyledTitle = styled.h1`
-  color: var(--green);
+  background-color: #f3ec78;
+  background-image: linear-gradient(to right, var(--mui-blue), var(--mui-dark-blue));
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
   font-family: var(--font-mono);
   font-size: clamp(100px, 25vw, 200px);
   line-height: 1;
@@ -21,6 +27,7 @@ const StyledTitle = styled.h1`
 const StyledSubtitle = styled.h2`
   font-size: clamp(30px, 5vw, 50px);
   font-weight: 400;
+  color: red;
 `;
 const StyledHomeButton = styled(Link)`
   ${({ theme }) => theme.mixins.bigButton};
