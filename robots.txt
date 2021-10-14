@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://korminejad.com/kasrakn.github.io/sitemap/sitemap-index.xml
-Host: https://korminejad.com
+Sitemap: https://kasrakn.github.io/kasrakn.github.io/sitemap/sitemap-index.xml
+Host: https://kasrakn.github.io
