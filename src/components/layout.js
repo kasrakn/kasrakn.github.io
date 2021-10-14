@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
-import { Head, Loader, Social, Email } from '@components';
-// import {  Footer  } from '@components';
+import { Head, Loader, Social, Email, Footer } from '@components';
 // import {  Nav } from '@components'
 import { GlobalStyle, theme } from '@styles';
 
@@ -76,7 +75,7 @@ const Layout = ({ children, location }) => {
 
               <div id="content">
                 {children}
-                {/* <Footer /> */}
+                <Footer />
               </div>
             </StyledContent>
           )}
