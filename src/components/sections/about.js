@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-// import { StaticImage } from 'gatsby-plugin-image';
+import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
@@ -128,12 +128,13 @@ const About = () => {
   }, []);
 
   const skills = [
-    'Cloud Computing',
-    'Distributed Systems',
     'Machine Learning',
     'Deep Learning',
-    'Cybersecurity',
+    'Machine Vision',
+    'NLP',
     'Bioinformatics',
+    'Cloud Computing',
+    'Distributed Systems',
   ];
 
   return (
@@ -172,16 +173,15 @@ const About = () => {
 
         <StyledPic>
           <div className="wrapper">
-            {/* <StaticImage
+            <StaticImage
               className="img"
               src="../../images/me.jpg"
-              // src="../../../static/me.jpg"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
               alt="Headshot"
-            /> */}
-            <div
+            />
+            {/* <div
               className="img"
               style={{
                 backgroundImage: 'url("me.jpg")',
@@ -189,7 +189,7 @@ const About = () => {
                 width: '100%',
                 height: '300px',
               }}
-            />
+            /> */}
           </div>
         </StyledPic>
       </div>
