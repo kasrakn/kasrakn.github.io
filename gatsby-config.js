@@ -1,7 +1,7 @@
 const config = require('./src/config');
 
 module.exports = {
-  pathPrefix: '/kasrakn.github.io',
+  pathPrefix: '/',
   siteMetadata: {
     title: 'Kasra Korminejad',
     description: 'Kasra is a software engineer and Computer Engineering student.',
@@ -26,7 +26,7 @@ module.exports = {
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,
         display: 'minimal-ui',
-        icon: 'logo.png',
+        icon: 'src/images/logo.png',
       },
     },
     `gatsby-plugin-offline`,
