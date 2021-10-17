@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://kasrakn.github.io/personal-website/sitemap/sitemap-index.xml
+Sitemap: https://kasrakn.github.io/kasrakn.github.io/sitemap/sitemap-index.xml
 Host: https://kasrakn.github.io
