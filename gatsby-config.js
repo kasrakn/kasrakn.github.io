@@ -1,7 +1,7 @@
 const config = require('./src/config');
 
 module.exports = {
-  pathPrefix: '/personal-website',
+  pathPrefix: '/kasrakn.github.io',
   siteMetadata: {
     title: 'Kasra Korminejad',
     description: 'Kasra is a software engineer and Computer Engineering student.',
