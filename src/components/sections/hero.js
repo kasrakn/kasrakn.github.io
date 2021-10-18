@@ -66,8 +66,8 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m a graduated Computer Engineering B.Sc. student at Ferdowsi university of Mashhad, Iran,
-        and a software engineer. Applying my knowledge to make technologies to solve problems is my
+        I’m a graduated Computer Science B.Sc. student at Ferdowsi university of Mashhad, Iran, and
+        a software engineer. Applying my knowledge to make technologies to solve problems is my
         passion for learning new things and working.
       </p>
     </>

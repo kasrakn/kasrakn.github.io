@@ -4,7 +4,7 @@ module.exports = {
   pathPrefix: '/',
   siteMetadata: {
     title: 'Kasra Korminejad',
-    description: 'Kasra is a software engineer and Computer Engineering student.',
+    description: 'Kasra is a software engineer and Computer Science student.',
     siteUrl: 'https://kasrakn.github.io', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@kasraknd',
